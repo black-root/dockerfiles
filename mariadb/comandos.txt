@@ -1,0 +1,3 @@
+docker build -t mariadb-tpi .
+docker run -p 3306  --name mariadbtest -d mariadb-tpi
+

@@ -1,0 +1,15 @@
+version: '2.0'
+services:
+   mariadbservice:
+      image: mariadb-tpi
+      ports:
+      - "3306:3306"
+      volumes:
+      - ./docker-runtime/mariadb:/var/lib/mysql
+   payaraservice:
+      image: payara-tpi
+      ports:
+      - "4848:4848"
+      - "8080:8080"
+      links:
+      - mariadbservice
